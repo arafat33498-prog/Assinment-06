@@ -1,5 +1,6 @@
 
 import './App.css'
+import Navbar from './component/navbar/Navbar'
 
 function App() {
   
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
      
-    <h1 className='text-amber-200'>hellow</h1>
+   <Navbar></Navbar>
   
     </>
   )
