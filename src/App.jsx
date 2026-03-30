@@ -5,6 +5,7 @@ import Counter from './component/counter/Counter'
 import Banner from './component/homepage/Banner'
 import Card from './component/homepage/card/Card'
 import Navbar from './component/navbar/Navbar'
+import StepsSection from './component/StepsSection/StepsSection'
 
 const fetchData = async() =>{
   const res = await fetch("/data.json")
@@ -24,7 +25,7 @@ function App() {
    <Card cardPromise={cardPromise}/>
     
    </Suspense>
-  
+    <StepsSection></StepsSection>
     </>
   )
 }
