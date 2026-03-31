@@ -2,7 +2,7 @@ import React, { use, useState } from 'react';
 import AvailableCard from '../../availavaleCard/AvailableCard';
 import SelectedCard from './selectedCard/SelectedCard';
 
-const Card = ({ cardPromise, handleAddToCart, selectedCards }) => {
+const Card = ({ cardPromise, handleAddToCart, handleDelete, selectedCards }) => {
     const CardData = use(cardPromise);
     const [view, setView] = useState("available")
 
@@ -27,7 +27,7 @@ const Card = ({ cardPromise, handleAddToCart, selectedCards }) => {
 
             {view === "available" 
                 ? <AvailableCard card={CardData} handleAddToCart={handleAddToCart} /> 
-                : <SelectedCard selectedCards={selectedCards} />
+                : <SelectedCard selectedCards={selectedCards} handleDelete={handleDelete} /> // Props pathano holo
             }
         </div>
     );

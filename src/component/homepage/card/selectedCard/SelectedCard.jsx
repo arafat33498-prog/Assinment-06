@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiOutlineTrash } from "react-icons/hi2";
 
-const SelectedCard = ({ selectedCards }) => {
+const SelectedCard = ({ selectedCards, handleDelete }) => {
     
     const totalPrice = selectedCards.reduce((total, item) => total + parseFloat(item.price), 0);
 
@@ -14,7 +14,7 @@ const SelectedCard = ({ selectedCards }) => {
             ) : (
                 <>
                     {selectedCards.map((item, index) => (
-                        <div key={index} className="flex items-center justify-between bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                        <div key={index} className="flex items-center justify-between bg-white p-5 rounded-2xl shadow-sm border border-gray-100 transition-all hover:shadow-md">
                             <div className="flex items-center gap-6">
                                 <div className="w-20 h-20 bg-gray-50 rounded-xl flex items-center justify-center p-3">
                                     <img src={`/${item.icon}`} alt="" className="w-full h-full object-contain" />
@@ -24,19 +24,22 @@ const SelectedCard = ({ selectedCards }) => {
                                     <p className="text-[#7C3AED] font-bold mt-1">${item.price}</p>
                                 </div>
                             </div>
-                            <button className="p-3 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all">
+                            {/* Delete Button Update */}
+                            <button 
+                                onClick={() => handleDelete(item.title)}
+                                className="p-3 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all cursor-pointer"
+                            >
                                 <HiOutlineTrash size={28} />
                             </button>
                         </div>
                     ))}
 
-                   
                     <div className="mt-8 border-t pt-8">
                         <div className="flex justify-between items-center mb-6">
-                            <span className="text-gray-500 text-lg">Total:</span>
-                            <span className="text-3xl font-bold text-slate-900">${totalPrice}</span>
+                            <span className="text-gray-500 text-lg font-medium">Total:</span>
+                            <span className="text-3xl font-bold text-slate-900">${totalPrice.toFixed(2)}</span>
                         </div>
-                        <button className="w-full bg-[#8B2CFF] hover:bg-[#7a25e0] text-white font-bold py-5 rounded-2xl shadow-lg transition-all text-lg">
+                        <button className="w-full bg-[#8B2CFF] hover:bg-[#7a25e0] text-white font-bold py-5 rounded-2xl shadow-lg transition-all text-lg active:scale-95">
                             Proceed To Checkout
                         </button>
                     </div>
