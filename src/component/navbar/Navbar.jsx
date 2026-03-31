@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoCartOutline } from 'react-icons/io5';
-import shopImg from "../../assets/shopping-cart.png"
+
 
 
 const Navbar = ({ count }) => {
@@ -33,19 +33,20 @@ const Navbar = ({ count }) => {
             </div>
 
             <div className="navbar-end gap-3 md:gap-6">
-            
+
                 <div className="indicator cursor-pointer">
-                   
+
                     {count > 0 && (
                         <span className="indicator-item badge badge-secondary bg-red-500 border-none text-white text-[10px] h-5 w-5 p-0 flex items-center justify-center rounded-full">
                             {count}
                         </span>
                     )}
                     <div>
-                        <img src={shopImg} alt="Cart" className="w-8" />
+                        <span><IoCartOutline />
+                        </span>
                     </div>
                 </div>
-              
+
 
                 <a className="hidden sm:inline-block font-semibold text-gray-700 hover:text-[#7C3AED] cursor-pointer">
                     Login

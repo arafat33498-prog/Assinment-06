@@ -28,8 +28,7 @@ const SingleCard = ({ cards, handleAddToCart }) => {
                     <img 
                         src={`/${cards.icon}`} 
                         alt={cards.title} 
-                        className="w-10 h-10 object-contain"
-                        onError={(e) => { e.target.src = "https://via.placeholder.com/150?text=Icon"; }} 
+                     
                     />
                 </div>
 

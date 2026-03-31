@@ -1,8 +1,8 @@
 import React from 'react';
 import { HiOutlineTrash } from "react-icons/hi2";
 
-const SelectedCard = ({ selectedCards, handleDelete }) => {
-    
+const SelectedCard = ({ selectedCards, handleDelete, handleCheckout }) => {
+
     const totalPrice = selectedCards.reduce((total, item) => total + parseFloat(item.price), 0);
 
     return (
@@ -24,8 +24,7 @@ const SelectedCard = ({ selectedCards, handleDelete }) => {
                                     <p className="text-[#7C3AED] font-bold mt-1">${item.price}</p>
                                 </div>
                             </div>
-                            {/* Delete Button Update */}
-                            <button 
+                            <button
                                 onClick={() => handleDelete(item.title)}
                                 className="p-3 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all cursor-pointer"
                             >
@@ -39,7 +38,10 @@ const SelectedCard = ({ selectedCards, handleDelete }) => {
                             <span className="text-gray-500 text-lg font-medium">Total:</span>
                             <span className="text-3xl font-bold text-slate-900">${totalPrice.toFixed(2)}</span>
                         </div>
-                        <button className="w-full bg-[#8B2CFF] hover:bg-[#7a25e0] text-white font-bold py-5 rounded-2xl shadow-lg transition-all text-lg active:scale-95">
+                        <button
+                            onClick={handleCheckout} 
+                            className="w-full bg-[#8B2CFF] hover:bg-[#7a25e0] text-white font-bold py-5 rounded-2xl shadow-lg transition-all text-lg active:scale-95 cursor-pointer"
+                        >
                             Proceed To Checkout
                         </button>
                     </div>
