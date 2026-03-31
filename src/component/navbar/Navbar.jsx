@@ -1,14 +1,15 @@
 import React from 'react';
 import { IoCartOutline } from 'react-icons/io5';
+import shopImg from "../../assets/shopping-cart.png"
 
-const Navbar = () => {
+
+const Navbar = ({ count }) => {
     return (
-        <div className="navbar bg-base-100 px-4 md:px-10 border-b border-gray-100 py-3">
+        <div className="navbar bg-base-100 px-4 md:px-10 border-b border-gray-100 py-3 sticky top-0 z-50">
 
             <div className="navbar-start">
                 <div className="dropdown lg:hidden">
-               
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow bg-base-100 rounded-box w-52 font-medium">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-medium">
                         <li><a>Products</a></li>
                         <li><a>Features</a></li>
                         <li><a>Pricing</a></li>
@@ -21,7 +22,6 @@ const Navbar = () => {
                 </a>
             </div>
 
-
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-2 text-[15px] font-medium text-gray-600">
                     <li><a className="hover:text-[#7C3AED]">Products</a></li>
@@ -32,16 +32,20 @@ const Navbar = () => {
                 </ul>
             </div>
 
-
             <div className="navbar-end gap-3 md:gap-6">
-
-                
-                    <div className="indicator">
-                        <span><IoCartOutline />
+            
+                <div className="indicator cursor-pointer">
+                   
+                    {count > 0 && (
+                        <span className="indicator-item badge badge-secondary bg-red-500 border-none text-white text-[10px] h-5 w-5 p-0 flex items-center justify-center rounded-full">
+                            {count}
                         </span>
+                    )}
+                    <div>
+                        <img src={shopImg} alt="Cart" className="w-8" />
                     </div>
-                
-
+                </div>
+              
 
                 <a className="hidden sm:inline-block font-semibold text-gray-700 hover:text-[#7C3AED] cursor-pointer">
                     Login

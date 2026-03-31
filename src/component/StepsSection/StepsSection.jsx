@@ -7,20 +7,20 @@ const StepsSection = () => {
         <div>
             <section className="py-20 bg-white">
             <div className="container mx-auto px-4 text-center">
-                {/* Section Header */}
+              
                 <h2 className="text-4xl font-bold text-slate-900 mb-2">Get Started In 3 Steps</h2>
                 <p className="text-slate-500 mb-16 text-sm">Start using premium digital tools in minutes, not hours.</p>
 
-                {/* Steps Grid */}
+                
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
-                    {/* Step 01 */}
+                   
                     <div className="bg-white border border-gray-100 rounded-3xl p-10 shadow-sm relative text-center">
                         <div className="absolute top-5 right-5 bg-[#8318FF] text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">
                             01
                         </div>
                         <div className="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-8 text-[#8318FF]">
-                            {/* Icon Emoji/SVG */}
+                          
                             <img src={userImg} alt="" />
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 mb-4">Create Account</h3>
@@ -29,7 +29,7 @@ const StepsSection = () => {
                         </p>
                     </div>
 
-                    {/* Step 02 */}
+                    
                     <div className="bg-white border border-gray-100 rounded-3xl p-10 shadow-sm relative text-center">
                         <div className="absolute top-5 right-5 bg-[#8318FF] text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">
                             02
@@ -43,7 +43,7 @@ const StepsSection = () => {
                         </p>
                     </div>
 
-                    {/* Step 03 */}
+                    
                     <div className="bg-white border border-gray-100 rounded-3xl p-10 shadow-sm relative text-center">
                         <div className="absolute top-5 right-5 bg-[#8318FF] text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold">
                             03
